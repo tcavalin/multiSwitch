@@ -35,4 +35,5 @@ $(document).ready(function(){
 ## Authors ##
 
 [Tiago Cavalin](https://github.com/tcavalin)
+
 [Rômulo Busatto](https://github.com/romulobusatto)
