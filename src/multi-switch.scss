@@ -1,0 +1,130 @@
+/* 
+    Created on : 15/04/2016, 14:25:50
+    Author     : tcavalin
+*/
+
+/* Mixins */
+
+@mixin shadow($h-shadow, $v-shadow : '', $blur : '', $spread : '', $color : '', $inset : '', $important : '') {
+    box-shadow: #{$inset} $h-shadow #{$v-shadow} #{$blur} #{$spread} #{$color} #{$important};
+    -moz-box-shadow: #{$inset} $h-shadow #{$v-shadow} #{$blur} #{$spread} #{$color} #{$important};
+    -webkit-box-shadow: #{$inset} $h-shadow #{$v-shadow} #{$blur} #{$spread} #{$color} #{$important};
+}
+
+@mixin radius($geralTopLeft, $topRight : '', $bottomRight : '', $bottomLeft : '') {
+    border-radius: $geralTopLeft #{$topRight} #{$bottomRight} #{$bottomLeft};
+    -moz-border-radius: $geralTopLeft #{$topRight} #{$bottomRight} #{$bottomLeft};
+    -webkit-border-radius: $geralTopLeft #{$topRight} #{$bottomRight} #{$bottomLeft};
+    -ms-border-radius: $geralTopLeft #{$topRight} #{$bottomRight} #{$bottomLeft};
+}
+
+@mixin no-select() {
+    user-select: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+@mixin transition($transition : all ease 0.3s) {
+
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+/* Styles */
+
+.multi-switch {
+    width: 50px;
+
+    @include no-select();
+
+    * {
+        @include transition();
+    }
+
+    .switch-content {
+        background: none;
+        background-color: #D97C6F;
+
+        height: 31px;
+
+        position: relative;
+        
+        cursor: pointer;
+
+        @include radius(31px);
+
+        .switch-circle {
+            background: #FFF;
+
+            width: 29px;
+            height: 29px;
+
+            position: absolute;
+            top: 1px;
+            left: 0%;
+            z-index: 1;
+            margin-left: 1px;
+
+            @include radius(29px);
+
+            @include shadow(3px, 3px, 0px, rgba(0,0,0,0.1));
+        }
+ 
+
+        .info-slide{
+            position: absolute;
+            z-index: 2;
+            width: 50%;
+            height: 100%;                
+            display: block;
+            
+            &.active{    
+                right: 0;
+                
+                @include radius(0, 31px, 31px, 0);
+            }
+
+            &.disable{
+                left: 0;
+                
+                @include radius(31px, 0, 0, 31px);
+            }
+        }
+
+        &.active {
+            background-color: #5DC177;
+
+            .switch-circle {
+                left: 100%;
+
+                margin-left: -30px;
+            }
+        }        
+
+        &.disabled {
+            background-color: #CCC;
+            
+            cursor: default;
+        }
+
+        &.initial{
+            background-color: #dddddd;
+
+            .switch-circle {
+                left: 50%;
+                margin-left: -14.5px;
+            }
+        }
+    }
+
+    input {
+        display: none;
+    }
+}

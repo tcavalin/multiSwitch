@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>multiSwitch - A switch jQuery plugin with a initial null default option.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="multi-switch.min.css">
+        <link rel="stylesheet" href="styles.css">
+        
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+        <script src="src/multi-switch.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>multiSwitch</h1>
+            <h3>A switch jQuery plugin with a initial null default option</h3>
+            <a href="https://github.com/tcavalin/multiSwitch" id="github" target="_blank" title=""><img src="images/github.png" /></a>
+        </header>
+
+        <section>
+            <h2>Basic usage:</h2>
+            <article>
+                <pre>&lt;input type="checkbox" class="multi-switch" value="0" /&gt;</pre>
+                <p><input type="checkbox" class="multi-switch" value="0" /></p>
+            </article>
+            
+            <h2>With a initial null default option:</h2>
+            <article>
+                <pre>&lt;input type="checkbox" class="multi-switch" initial-value="0" unchecked-value="2" checked-value="1" value="0" /&gt;</pre>
+                <p><input type="checkbox" class="multi-switch" initial-value="0" unchecked-value="2" checked-value="1" value="0" /></p>
+            </article>
+            
+            <h2>Disabled:</h2>
+            <article>
+                <pre>&lt;input type="checkbox" class="multi-switch" value="0" disabled="disabled" /&gt;</pre>
+                <p><input type="checkbox" class="multi-switch" value="0" disabled="disabled" /></p>
+            </article>
+        </section>
+        
+        <script>
+            $(document).ready(function(){
+                $('.multi-switch').multiSwitch();
+            });
+        </script>
+
+        <footer>
+            <a href="https://github.com/tcavalin/multiSwitch" target="_blank">multiSwitch</a> by <a href="https://github.com/tcavalin" target="_blank">Tiago Cavalin</a>
+        </footer>
+    </body>
+</html>
