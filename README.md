@@ -5,9 +5,15 @@ A switch jQuery plugin with a initial null default option
 
 **Demo**: http://tcavalin.github.io/multiSwitch/
 
-## multiSwitch ##
+## Installation ##
 
-Basic usage:
+Include script after the jQuery library:
+
+```html
+<script src="src/multi-switch.js"></script>
+```
+
+## Basic usage ##
 
     <input type="checkbox" class="multi-switch" value="0" />
 
@@ -18,3 +24,15 @@ With a initial null default option:
 Disabled:
 
     <input type="checkbox" class="multi-switch" value="0" disabled="disabled" />
+
+### jQuery
+```js
+$(document).ready(function(){
+    $('.multi-switch').multiSwitch();
+});
+```
+
+## Authors ##
+
+[Tiago Cavalin](https://github.com/tcavalin)
+[Rômulo Busatto](https://github.com/romulobusatto)
