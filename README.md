@@ -1,5 +1,5 @@
 # multiSwitch
-A switch jQuery plugin with an initial option
+A switch jQuery plugin without an initial option
 
 ![demo](https://cloud.githubusercontent.com/assets/6153386/14571662/d4f6c450-0320-11e6-87c2-17c06a74a89f.gif)
 
